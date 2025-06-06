@@ -59,11 +59,6 @@ Curso
 
 Puedes realizar operaciones básicas (GET, POST, DELETE, etc.) usando herramientas como Postman o directamente desde Swagger.
 
-🌐 Endpoints por entidad
-Entidad	Ruta Base	Operaciones Disponibles
-Estudiantes	/estudiantes	GET, POST, GET /{id}, POST /{id}, DELETE /{id}
-Profesores	/profesores	GET, POST, GET /{id}, DELETE /{id}
-Cursos	/curso	GET, POST, GET /{id}, DELETE /{id}
 
 📘 Acceso a Swagger UI
 Cuando ejecutas el proyecto, accede al navegador en:
@@ -76,30 +71,36 @@ La ruta /index te redirige automáticamente a Swagger UI en:
 🧪 Probar con Postman
 También puedes hacer pruebas manuales con Postman. Usa las siguientes rutas:
 
+📚 Estudiantes
+
 ```
-GET http://localhost:8080/estudiantes
+| Método | URL                                      | Descripción                     |
+| ------ | ---------------------------------------- | ------------------------------- |
+| GET    | `http://localhost:8080/estudiantes`      | Obtener todos los estudiantes   |
+| GET    | `http://localhost:8080/estudiantes/{id}` | Obtener un estudiante por ID    |
+| POST   | `http://localhost:8080/estudiantes`      | Agregar un nuevo estudiante     |
+| POST   | `http://localhost:8080/estudiantes/{id}` | Actualizar un estudiante por ID |
+| DELETE | `http://localhost:8080/estudiantes/{id}` | Eliminar un estudiante por ID   |
 
-POST http://localhost:8080/estudiantes (con JSON en el body)
-
-GET http://localhost:8080/estudiantes/1
-
-POST http://localhost:8080/estudiantes/1 (para actualizar)
-
-DELETE http://localhost:8080/estudiantes/1
 ```
-
-📁 Estructura del Proyecto
+🎓 Profesores
 ```
-src/
-├── main/
-│   ├── java/
-│   │   └── com/example/demo/
-│   │       ├── controller/    # Controladores REST
-│   │       ├── entity/        # Entidades JPA
-│   │       └── repository/    # Repositorios JPA
-│   └── resources/
-│       ├── application.properties  # Configuración de base de datos y Swagger
-│       └── static/index.html       # Redirección a Swagger
+| Método | URL                                     | Descripción                  |
+| ------ | --------------------------------------- | ---------------------------- |
+| GET    | `http://localhost:8080/profesores`      | Obtener todos los profesores |
+| GET    | `http://localhost:8080/profesores/{id}` | Obtener un profesor por ID   |
+| POST   | `http://localhost:8080/profesores`      | Agregar un nuevo profesor    |
+| DELETE | `http://localhost:8080/profesores/{id}` | Eliminar un profesor por ID  |
+```
+🏫 Cursos
+```
+| Método | URL                                | Descripción               |
+| ------ | ---------------------------------- | ------------------------- |
+| GET    | `http://localhost:8080/curso`      | Obtener todos los cursos  |
+| GET    | `http://localhost:8080/curso/{id}` | Obtener un curso por ID   |
+| POST   | `http://localhost:8080/curso`      | Agregar un nuevo curso    |
+| DELETE | `http://localhost:8080/curso/{id}` | Eliminar un curso por ID  |
+| DELETE | `http://localhost:8080/curso`      | Eliminar todos los cursos |
 
 ```
 
@@ -108,4 +109,3 @@ Este proyecto es solo un ejemplo educativo básico.
 
 No incluye relaciones entre entidades ni seguridad real.
 
-Puedes mejorarlo con autenticación JWT, DTOs, manejo global de errores, paginación, etc.
