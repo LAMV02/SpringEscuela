@@ -44,8 +44,11 @@ Configura el archivo src/main/resources/application.properties con tus credencia
 spring.datasource.url=jdbc:mysql://localhost:3306/escuela
 spring.datasource.username=coloca_tu_usuario_aqui
 spring.datasource.password=coloca_tu_contraseña_aqui
+spring.datasource.driver-class-name=com.mysql.cj.jdbc.Driver
+
 spring.jpa.hibernate.ddl-auto=update
 spring.jpa.show-sql=true
+spring.jpa.properties.hibernate.dialect=org.hibernate.dialect.MySQLDialect
 ```
 
 ▶️ ¿Cómo funciona?
