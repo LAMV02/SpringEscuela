@@ -26,6 +26,13 @@ public class Profesor {
     @NotEmpty
     private String materia;
 
+    public Long getId() {
+        return id;
+    }
+
+    public void setId(Long id) {
+        this.id = id;
+    }
 
     public String getNombre() {
         return nombre;
@@ -50,4 +57,6 @@ public class Profesor {
     public void setMateria(String materia) {
         this.materia = materia;
     }
+
+
 }
